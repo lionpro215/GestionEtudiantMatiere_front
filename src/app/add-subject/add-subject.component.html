@@ -1,0 +1,6 @@
+<mat-card class="item" *ngIf="subject" (dblclick)="edit.emit(subject)">
+  <h3>{{ subject.subjectName }}</h3>
+  <p>
+    {{ subject.coef }}
+  </p>
+</mat-card>

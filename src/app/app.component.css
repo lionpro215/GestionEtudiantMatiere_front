@@ -1,0 +1,38 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.btn_content{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-evenly;
+max-width: 90%;
+margin: 60px auto;
+}
+.btn_content .btn_add{
+  background-color: #1743d3ee;
+  color: #f1f1f1 !important;
+  box-shadow: 1px 0px 10px #14141473;
+  transform: scale(1.2);
+  transition: .5s ease-in-out;
+  min-width: 5.5cm;
+  margin-bottom: 20px;
+}
+.btn_content .btn_add:hover{
+  background-color: #fff;
+  color: #1743d3ee !important;
+  border: 2px solid #1743d3ee;
+}
+
+table{
+  width: 80%;
+  min-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+}
+table thead{
+  width: 100%;
+  background-color: #00249bbb;
+  color: #f1f1f1;
+  font-size: 1.2em;
+  text-align: center;
+}
