@@ -1,5 +1,5 @@
 export interface Subject {
-  id_subject?: string,
+  id_subject?: String,
   subjectName: string,
   coef: string
 }

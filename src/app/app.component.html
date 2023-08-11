@@ -1,9 +1,136 @@
+<!-- **********ADD-SUBJECT********** -->
+<div class="addSubject" *ngIf="isSuject">
+  <form [formGroup]="form">
+    <!-- <fieldset> -->
+    <!-- <legend>Ajout d'une matiere</legend> -->
+    <div class="text">
+      <h4>Ajout d'une matiere</h4>
+    </div>
+    <p>
+      <label for="subjectName">Nom de la matiere:</label>
+      <input type="text" name="subjectName" id="subjectName" placeholder="veillez entrez le nom de la matiere"
+        formControlName="subjectName" required>
+    </p>
+    <p>
+      <label for="coef">Coefficient de la matiere:</label>
+      <input type="number" name="coef" id="coef" placeholder="veillez entrez le nom de la matiere"
+        formControlName="coef" required>
+    </p>
+    <div class="buttons">
+      <button type="submit" (click)="createSubject()">Ajouter</button>
+      <button type="reset" (click)="closeform()">Annuler</button>
+    </div>
+    <!-- </fieldset> -->
+  </form>
+</div>
+
+<!--**********UPDATE-SUBJECT**********-->
+<div class="addSubject" *ngIf="isSujectUpdate">
+  <form [formGroup]="formUpdate">
+    <!-- <fieldset>
+      <legend>Ajout d'une matiere</legend> -->
+    <div class="text">
+      <h4>Modification d'une matiere</h4>
+    </div>
+    <p>
+      <label for="subjectName">Nom de la matiere</label>
+      <input [(ngModel)]="nameSubject" type="text" name="subjectName" id="subjectName" formControlName="subjectName"
+        required>
+    </p>
+    <p>
+      <label for="coef">Coefficient de la matiere</label>
+      <input [(ngModel)]="coefSubject" type="number" name="coef" id="coef" formControlName="coef" required>
+    </p>
+    <div class="buttons">
+      <button type="submit" (click)="updateSubject(idSubject, nameSubject, coefSubject)">Modifier</button>
+      <button type="reset" (click)="closeform()">Annuler</button>
+    </div>
+    <!-- </fieldset> -->
+  </form>
+</div>
+
+<!-- **********ADD-USER********** -->
+<div class="addSubject" *ngIf="isUser">
+  <form [formGroup]="formUser">
+    <div class="text">
+      <h4>Ajout d'un Etudiant</h4>
+    </div>
+    <p>
+      <label for="userName">Nom de l'etudiant:</label>
+      <input type="text" name="userName" id="userName" placeholder="veillez entrez le nom de l'etudiant"
+        formControlName="name" required>
+    </p>
+
+    <p>
+      <label for="userPseudo">Pseudo de l'etudiant</label>
+      <input type="text" name="userPseudo" id="userPseudo" placeholder="veillez entrez un pseudo pour cette etudiant"
+        formControlName="username" required>
+    </p>
+
+    <p>
+      <label for="userEmail">L'email de l'etudiant</label>
+      <input type="email" name="userEmail" id="userEmail" placeholder="veillez entrez l'email de l'etudiant"
+        formControlName="email" required>
+    </p>
+
+    <p>
+      <label for="userPassword">Mot de passe de l'etudiant</label>
+      <input type="password" name="userPassword" id="userPassword"
+        placeholder="veillez entrez un mot de passe pour cette l'etudiant" formControlName="password" required>
+    </p>
+
+    <div class="buttons">
+      <button type="submit" (click)="createUser()">Ajouter</button>
+      <button type="reset" (click)="closeformUser()">Annuler</button>
+    </div>
+    <!-- </fieldset> -->
+  </form>
+</div>
+
+<!--**********UPDATE-USER**********-->
+<div class="addSubject" *ngIf="isUserUpdate">
+  <form [formGroup]="formUpdateUser">
+    <div class="text">
+      <h4>Modification d'un etudiant</h4>
+    </div>
+    <p>
+      <label for="userName">Nom de l'etudiant:</label>
+      <input [(ngModel)]="nameUser" type="text" name="userName" id="userName" placeholder="veillez entrez le nom de l'etudiant"
+        formControlName="name" required>
+    </p>
+
+    <p>
+      <label for="userPseudo">Pseudo de l'etudiant</label>
+      <input [ngModel]="usernameUser" type="text" name="userPseudo" id="userPseudo" placeholder="veillez entrez un pseudo pour cette etudiant"
+        formControlName="username" required>
+    </p>
+
+    <p>
+      <label for="userEmail">L'email de l'etudiant</label>
+      <input [ngModel]="emailUser" type="email" name="userEmail" id="userEmail" placeholder="veillez entrez l'email de l'etudiant"
+        formControlName="email" required>
+    </p>
+
+    <p>
+      <label for="userPassword">Mot de passe de l'etudiant</label>
+      <input [ngModel]="passwodUser" type="password" name="userPassword" id="userPassword"
+        placeholder="veillez entrez un mot de passe pour cette l'etudiant" formControlName="password" required>
+    </p>
+    <div class="buttons">
+      <button type="submit" (click)="updateUser(idUser)">Modifier</button>
+      <button type="reset" (click)="closeformUser()">Annuler</button>
+    </div>
+    <!-- </fieldset> -->
+  </form>
+</div>
+
+<!-- **********NAVBAR********** -->
 <p class="box-toolbar">
   <mat-toolbar color="primary">
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>local_fire_department</mat-icon>
     </button>
-    <span>LIONPRO-FIRE</span>
+    <span>GESTION-ETIUDIANTS-MATIERES</span>
     <span class="example-spacer"></span>
     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon>favorite</mat-icon>
@@ -14,83 +141,94 @@
   </mat-toolbar>
 </p>
 
+<!-- **********BUTTONS********** -->
 <div class="btn_content">
-  <button mat-button (click)="createSubject()" color="primary" class="btn_add">
+  <button mat-button (click)="showform()" color="primary" class="btn_add">
     <mat-icon>add</mat-icon> Ajouter une matiere
   </button>
-  <button mat-button (click)="getSubjet()" color="primary" class="btn_add">
+  <button mat-button (click)="getSubjets()" color="primary" class="btn_add">
     <mat-icon>list</mat-icon> Liste des matieres
   </button>
-  <button mat-button color="primary" class="btn_add">
+  <button mat-button (click)="showformUser()" color="primary" class="btn_add">
     <mat-icon>add</mat-icon> Ajouter un utilisateur
   </button>
-  <button mat-button color="primary" class="btn_add">
+  <button mat-button (click)="getUsers()" color="primary" class="btn_add">
     <mat-icon>list</mat-icon> Liste des utilisateurs
   </button>
 </div>
 
-<table border="3" >
-  <thead>
-    <tr>
-      <td>#id</td>
-      <td>Nom de la matiere</td>
-      <td>Coeficient de la matiere</td>
-      <td>Action sur la matiere</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>lionpro</td>
-      <td>5</td>
-      <td>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Data Analyse</td>
-      <td>5</td>
-      <td>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>JAVA</td>
-      <td>6</td>
-      <td>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </tr>
-    <tr *ngFor="let subject of subjects">
-      <td>{{subject?.id_subject}}</td>
-      <td>{{subject?.subjectName}}</td>
-      <td>{{subject?.coef}}</td>
-      <td>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <button mat-button color="primary" class="btn_add">
-          <mat-icon>delete</mat-icon>
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
 
+<div class="showText" *ngIf="isShowText===true">
+  <h1>BIENVENUE SUR VOTRE ESPACE PERSONNEL</h1>
+</div>
+
+<!--**********LIST-SUBJECT**********-->
+<div *ngIf="isSubjectList">
+  <h1 style="margin: auto; text-align: center; /*text-shadow: 0px 0px 5px black;*/">LISTE DES MATIERES</h1>
+  <table>
+    <thead>
+      <tr>
+        <td>#id</td>
+        <td>Nom de la matiere</td>
+        <td>Coeficient de la matiere</td>
+        <td>Action sur la matiere</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngIf="subjects.length===0">
+        <td style="text-align: center; margin:auto;">Oup! la liste est vide!!!</td>
+      </tr>
+      <tr *ngFor="let subject of subjects">
+        <td>{{subject?.id_subject}}</td>
+        <td>{{subject.subjectName}}</td>
+        <td>{{subject?.coef}}</td>
+        <td>
+          <button mat-button color="primary" class="btn_add"
+            (click)="showformUpdate(subject.id_subject, subject.subjectName, subject.coef)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button color="primary" class="btn_add" (click)="deleteSubject(subject.id_subject)">
+            <mat-icon class="btnRed">delete</mat-icon>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <!--**********LIST-USERS**********-->
+  <div *ngIf="isUserList">
+    <h1 style="margin: auto; text-align: center; /*text-shadow: 0px 0px 5px black;*/">LISTE DES ETUDIANTS</h1>
+    <table>
+      <thead>
+        <tr>
+          <td>#id</td>
+          <td>Nom de l'etudiant</td>
+          <td>Pseudo de l'etudiant</td>
+          <td>L'email de l'etudiant</td>
+          <td>Le mot de passe de l'etudiant</td>
+          <td>Action sur l'etudiant</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- <tr *ngIf="subjects.length===0">
+        <td style="text-align: center; margin:auto;">Oup! la liste est vide!!!</td>
+      </tr> -->
+        <tr *ngFor="let user of users">
+          <td>{{user?.id_user}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.password}}</td>
+          <td>
+            <button mat-button color="primary" class="btn_add" (click)="showformUpdateUser(user.id_user, user.username, user.name, user.email, user.password)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-button color="primary" class="btn_add" (click)="deleteUser(user.id_user)">
+              <mat-icon class="btnRed">delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

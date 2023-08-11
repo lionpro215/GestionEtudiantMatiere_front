@@ -1,12 +1,19 @@
+/* **********DESIGN NAVBAR********** */
+.box-toolbar{
+  box-shadow: 0px 2px 8px black;
+}
 .example-spacer {
   flex: 1 1 auto;
 }
+
+/* **********DESIGN BUTTONS********** */
 .btn_content{
-display: flex;
-flex-wrap: wrap;
-justify-content: space-evenly;
-max-width: 90%;
-margin: 60px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  max-width: 90%;
+  margin: 50px auto;
+  z-index: 5;
 }
 .btn_content .btn_add{
   background-color: #1743d3ee;
@@ -23,6 +30,100 @@ margin: 60px auto;
   border: 2px solid #1743d3ee;
 }
 
+/* **********DESIGN SHOWTEXT********** */
+.showText{
+  font-size: 2em;
+  text-align: center;
+  text-shadow: 5px 5px 15px #1d1d1da1;
+}
+
+/* **********DESIGN ADDSUBJECT********** */
+.addSubject{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9;
+  background-color: rgba(0, 0, 0, 0.349);
+  backdrop-filter: blur(5);
+  display: flex;
+  align-items: center;
+}
+.addSubject form{
+  width: 400px;
+  height: auto;
+  margin: 0 auto;
+  /* padding: 10px ; */
+  box-shadow: 1px 1px 10px rgba(214, 214, 214, 0.808);
+  background-color: #fff;
+}
+.addSubject form fieldset{
+  height: 100%;
+}
+.addSubject form fieldset legend{
+  margin: auto;
+  text-align: center;
+  font-weight: bold;
+}
+.addSubject form .text{
+  width: 100%;
+  height: 60px;
+  background-color: #00249bbb;
+  box-shadow: 0px 0px 5px black;
+  color: #f1f1f1;
+  font-size: large;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+}
+.addSubject form p{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 20px;
+}
+.addSubject form input{
+  width: 180px;
+  height: .8cm;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+  outline: none;
+  /* border-bottom: 2px solid black; */
+}
+.addSubject form .buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+.addSubject form .buttons button{
+  width: 2.8cm;
+  height: 1cm;
+  border: none;
+  border-radius: 5px;
+  background-color: #00249bbb;
+  font-size: 1.1em;
+  color: #f1f1f1;
+  transition: .8s ease-in-out;
+}
+.addSubject form .buttons button:nth-child(2){
+  background-color: tomato;
+}
+.addSubject form .buttons button:hover{
+  border: 2px solid #00249bbb;
+  background-color: #fff;
+  color: #00249bbb;
+}
+.addSubject form .buttons button:nth-child(2):hover{
+  border: 2px solid tomato;
+  background-color: #fff;
+  color: tomato;
+}
+
+/* **********DESIGN TABLE********** */
 table{
   width: 80%;
   min-width: 500px;
@@ -31,8 +132,16 @@ table{
 }
 table thead{
   width: 100%;
+  height: 50px;
   background-color: #00249bbb;
   color: #f1f1f1;
   font-size: 1.2em;
   text-align: center;
+}
+table tbody tr{
+  height: 50px;
+  box-shadow: 0px 0px 5px #1f1f1f7e;
+}
+.btnRed{
+  color: tomato !important;
 }
